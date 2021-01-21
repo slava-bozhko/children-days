@@ -242,8 +242,9 @@ h4{
     }
 }
 #map{
+    margin: 0 auto;
     height: 500px;
-    width: 100vw;
+    width: 98vw;
 }
 .adress{
     // background-color: $icon-color;
@@ -422,7 +423,7 @@ h4{
         left: 50%;
         top: 50%;
         transform: translate(-50%,-100%);
-        color: $primery-color;
+        color: $secondary-color;
         
     }
     
@@ -434,6 +435,9 @@ h4{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-auto-rows: 270px;
+    &--mw{
+        max-width: 700px;
+    }
 }
 
 
@@ -469,6 +473,7 @@ h4{
     text-align: center;
 
     position: relative;
+    color: $secondary-color;
     
     &__img{
         position: absolute;
@@ -481,15 +486,14 @@ h4{
     }
     
     &__text{
-        font-size: 1.6rem;
+        font-size: 1.8rem;
         font-family: $text-ff;
     }
     &__cap{
-        font-size: 3.2rem;
+        font-size: 3.8rem;
         position: absolute;
         left: 50%;
         top: 65%;
-        color: $dark-gray;
         transform: translate(-40%,-50%);
     }
     
