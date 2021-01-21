@@ -13,7 +13,7 @@ var isInViewport = function (elem) {
     return (
         bounding.top >= 0 &&
         bounding.left >= 0 &&
-        bounding.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+        bounding.top <= (window.innerHeight || document.documentElement.clientHeight) &&
         bounding.right <= (window.innerWidth || document.documentElement.clientWidth)
     );
 };
@@ -52,10 +52,13 @@ function initMap() {
       zoom: 17,
       
     });  
-
+const image = '../img/karm.jpg'
 const marker = new google.maps.Marker({
     position: center,
+    title: "Hello World!",
     map: map,
+    icon: image,
+
     });  
   }
 
