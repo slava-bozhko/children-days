@@ -241,41 +241,39 @@ h4{
         height: 35vh;
     }
 }
+.adr{
+    
+    position: relative;
+}
 #map{
-    margin: 0 auto;
+    margin: 50px auto;
     height: 500px;
     width: 98vw;
 }
 .adress{
-    // background-color: $icon-color;
-    
-    font-family: $text-ff;
-    font-size: 2rem;
+    position: absolute;
+    left: 10px;
+    top: 50px;    
+    font-family: $title-ff;
+    font-size: 1.8rem;
     line-height: 1.6;
-    width: 50%;
-    height: 30vh;
-    
-    margin: 100px 5px;
+    background-color: #fff;
+    margin: 10px 5px;
     padding: 15px;
-    position: relative;
-    &__text{
-        position: absolute;
-        z-index: 1;
+    border-radius: 2px; 
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 4px -1px; 
+    max-width: 200px;
+    
+    a{
+        font-weight: 700;
+        text-decoration: none;
+        color: $dark-gray;
+        @include hover{
+            color: $title-color;
+            transition: all .3s ease-in-out;
+        }
     }
-    &__sect{
-        position: absolute;
-        z-index: 0;
-        left: 5%;
-        top: 50%;
-        transform: translate(-50%, -50%);
-    }
-    &__chick{
-        position: absolute;
-        left: 90%;
-        top: 50%;
-        transform: translate(-50%, -50%);
-        z-index: 2;
-    }
+    
 }
 .swiper-container {
     width: 60vw;
@@ -284,6 +282,7 @@ h4{
 :root{
     --swiper-theme-color: #ffd966;
     --swiper-navigation-size: 85px;
+
 }
 
 
@@ -292,7 +291,7 @@ h4{
     font-size: 2.4rem;
     background: transparent;
     padding: 0 100px;
-    
+
 
     /* Center slide text vertically */
     display: -webkit-box;
@@ -309,11 +308,23 @@ h4{
     -webkit-align-items: center;
     align-items: center;
   }
+  .swiper-button-next{
+    transition: all .2s ease-in-out;
+
+}
+.swiper-button-prev{
+    transition: all .2s ease-in-out;
+
+}
 .swiper-button-next:hover{
       transform:scale(1.2);
+      transition: all .3s ease-in-out;
+
   }
 .swiper-button-prev:hover{
     transform:scale(1.2);
+    transition: all .3s ease-in-out;
+
 }
 .span-slider{
     font-family: $text-ff;
@@ -395,6 +406,8 @@ h4{
 .sphere{
     margin: 50px 10px;
     padding: 5px;
+    transition: all .3s ease-in-out;
+
     &__ico{
         position: relative;
     }
@@ -426,7 +439,12 @@ h4{
         color: $secondary-color;
         
     }
-    
+    @include hover{
+        transform: scale(1.3);
+        cursor: pointer;
+        transition: all .3s ease-in-out;
+
+    }
 
 }
 .stars{
@@ -519,9 +537,15 @@ h4{
         background-repeat: no-repeat;
         background-size: auto, auto;
         background-position: center;
+        transition: all .3s ease-in-out;
         &--bg{
-        background-image: url(../img/tabel1.png);        
-
+        background-image: url(../img/tabel1.png);
+        }
+        @include hover{
+            transform: scale(1.2);
+            cursor: pointer;
+            outline-color: transparent;
+            transition: all .25s ease-in-out;
 
         }
     }
