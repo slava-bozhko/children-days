@@ -52,16 +52,22 @@ function initMap() {
       zoom: 17,
       
     });  
+  const contentString = 'проспект Нахимова, 178 Мариуполь, Донецкая область, Украина 87500 тел. <a href="tel:+380977795034">+38(097)779-50-34</a> <a href="tel:+380956626444">+38(095)662-64-44</a>';
+  const infowindow = new google.maps.InfoWindow({
+    content: contentString,
+  });
 const image = '../img/karm.jpg'
 const marker = new google.maps.Marker({
     position: center,
-    title: "Hello World!",
+    title: 'проспект Нахимова, 178 Мариуполь, Донецкая область, Украина 87500 тел. +38(097)779-50-34, +38(095)662-64-44',
     map: map,
     icon: image,
 
     });  
+marker.addListener("click", () => {
+      infowindow.open(map, marker);
+      });
   }
-
   var swiper = new Swiper('.swiper-container', {
     spaceBetween: 30,
     centeredSlides: true,
