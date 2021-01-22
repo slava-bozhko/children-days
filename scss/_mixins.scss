@@ -5,3 +5,9 @@
         @content;
     }    
 }
+@mixin media($w) {
+    @media screen and (max-width: $w) {
+        @content;
+    }
+    
+}

@@ -34,7 +34,14 @@ h1{
     font-size: 9.6rem;
     max-width: 500px;
     letter-spacing: 1rem;
+    @include media(990px) {
+        font-size: 7rem;
+    }
+    @include media(760px) {
+        font-size: 5rem;
+    }   
 }
+
 h2{
     margin: 0;
 }
@@ -46,17 +53,19 @@ h3{
 }
 h4{
     font-size: 3rem;
+    margin-top: 50px;
 
 }
 
 .navi{
+    // opacity: 0;
     position: fixed;
     background-color: $secondary-color;
     top: 50%;
     left: 50%;
     width: 100vw;
     height: 100vh;
-    transform: translate(50%, 50%);
+    transform: translate(-2500%, 0%);
     z-index: 10;
     display: flex;
     flex-direction: column;
@@ -95,7 +104,12 @@ h4{
 #toggler-input:checked ~ nav{
     transform: translate(-50%, -50%);
     opacity: 1;
+    
 }
+// #toggler-input:checked body{
+//     display: none;
+//     overflow: hidden;
+// }
 
 
 #toggler-input:checked ~ #toggler{
@@ -142,7 +156,7 @@ h4{
 }
 .bg{
     padding: 5px 0 5px;
-    background-color: $dark-gray;
+    background-color: $secondary-color;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -150,6 +164,10 @@ h4{
     position: relative;
     &--about{
         background-image: url('../img/back222.jpg');
+        @include media(760px) {
+            background-color: $title-color;
+            background-image: none;
+        }
     }
     &--header{
         background-image: url('../img/back4.jpg');
@@ -159,6 +177,12 @@ h4{
     }
     &--people{
         background-color: $title-color;
+        @include media(990px) {
+            min-height: 150vh;            
+        }
+        @include media(760px) {
+            min-height: 200vh;            
+        }
     }
     &--info{
         background-image: url('../img/back3.jpg');
@@ -173,6 +197,10 @@ h4{
         background-color: $secondary-color;
         
     }
+    &--yellow{
+        background-color: $primery-color;
+        
+    }
 }
 .tittle{
         background-image: url('../img/head.png');
@@ -184,6 +212,9 @@ h4{
         top: 50%;
         transform: translate(-50%, -50%);
         text-align: center;
+        @include media(760px) {
+            left: 50%;
+        }  
 }
 
 .caption{
@@ -192,16 +223,18 @@ h4{
     color: $primery-color;
     font-size: 6.4rem;
     letter-spacing: 1.5px;
-    
+    @include media(990px) {
+        font-size: 5rem;
+    }
     &__about{
         font-family: $text-ff;
         font-size: 2.4rem;
         color:  $secondary-color;
-        display: block;
-    }
+        // display: block;
+        }
     &--right{
         color: $dark-gray;
-        text-align: right;
+        text-align: left;
     }
     &--center{
         text-align: center;
@@ -228,8 +261,23 @@ h4{
     &--middle{
         height: 100vh;
     }
+    &__info{
+        max-width: 40vw;
+        @include media(990px) {
+            max-width: 60vw;
+        }
+        @include media(760px) {
+            max-width: 100%;
+        }   
+    }
     &__item{
-        max-width: 35vw;        
+        max-width: 35vw;  
+        @include media(990px) {
+            max-width: 50vw;
+        }
+        @include media(760px) {
+            max-width: 100%;
+        }   
     }
     &--rigth{
         justify-content: flex-end;
@@ -237,8 +285,11 @@ h4{
     }
     &--center{
         justify-content: center;
-        // align-items: center;
-        height: 35vh;
+        align-items: center;
+        margin: 20px 0 100px;
+        // height: 35vh;
+        // max-width: 35vw;        
+
     }
 }
 .adr{
@@ -249,6 +300,14 @@ h4{
     margin: 50px auto;
     height: 500px;
     width: 98vw;
+    @include media(990px) {
+        width: 90vw;
+    }
+    @include media(576px) {
+        width: 95vw;
+        height: 100vh;
+    }
+
 }
 .adress{
     position: absolute;
@@ -344,12 +403,14 @@ h4{
 .person{
     padding: 20px 40px;
     text-align: center;
-    // margin-top: 30px;
-    // margin-bottom: 30px;
+    
     color: $dark-gray;
+    @include media(990px) {
+        margin: 40px 10px;
+    }
     &__img{
-        width: 250px;
-        height: 250px;
+        width: 240px;
+        height: 240px;
         overflow: hidden;
         position: relative;
         border: 1px solid $title-color;
@@ -456,8 +517,12 @@ h4{
     &--mw{
         max-width: 700px;
     }
+    @include media(576px) {
+        grid-template-columns: 1fr;
+        
+    }
+    
 }
-
 
 .star{
     text-align: center;
@@ -487,35 +552,77 @@ h4{
     }
     
 }
-.anim{
-    text-align: center;
-
-    position: relative;
-    color: $secondary-color;
-    
-    &__img{
-        position: absolute;
-        left: 50%;
-        top: 65%;
-        transform: translate(-50%,-50%);
-        &--cat{
-            left: 57%;
-        }
+.animals{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    @include media(768px) {
+        flex-direction: column;
     }
-    
-    &__text{
-        font-size: 1.8rem;
-        font-family: $text-ff;
-    }
-    &__cap{
-        font-size: 3.8rem;
-        position: absolute;
-        left: 50%;
-        top: 65%;
-        transform: translate(-40%,-50%);
-    }
-    
 }
+
+.anim{
+    width: 50%;
+    padding: 10px;
+    height: 520px;
+    background-image: url('../img/raccoon.png');
+    background-repeat: no-repeat;
+    background-size: auto, auto;
+    background-position: center;
+    text-align: center;
+    padding-left: 50px;
+    // color: $secondary-color;
+    // display: flex;
+    // justify-content: center;
+    // align-items: center;
+    @include media(768px) {
+    width: 70%;
+    }
+    &--cat{
+        background-image: url('../img/cat.png');
+        padding-left: 0;
+    }
+    &__text{
+            font-size: 1.8rem;
+            line-height: 1.4;
+            font-family: $text-ff;
+            display: block;
+            max-width: 280px;
+            margin: 10px auto;
+            text-align: left;
+            }
+}
+
+// .anim{
+//     text-align: center;
+
+//     position: relative;
+//     color: $secondary-color;
+    
+//     &__img{
+//         position: absolute;
+//         left: 50%;
+//         top: 65%;
+//         transform: translate(-50%,-50%);
+//         &--cat{
+//             left: 57%;
+//         }
+//     }
+    
+//     &__text{
+//         font-size: 1.8rem;
+//         font-family: $text-ff;
+//     }
+//     &__cap{
+//         font-size: 3.8rem;
+//         position: absolute;
+//         left: 50%;
+//         top: 65%;
+//         transform: translate(-40%,-50%);
+//     }
+    
+// }
 .wrapper {
     display: grid;
     
