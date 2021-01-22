@@ -25,14 +25,9 @@ function checkItems(){
     items.forEach(item=>{
         if (isInViewport(item)){
             let animateMode = item.getAttribute('data-animate');
-                // delay       = item.getAttribute('data-delay');
 
             item.classList.add('animate__animated', 'animate__'+animateMode);
-            // if (delay) {
-            //     item.classList.add(`animate__delay-${delay}s`);
-
-            // }
-
+          
             item.classList.remove('animate');
         }
     
@@ -72,23 +67,19 @@ marker.addListener("click", () => {
     spaceBetween: 30,
     centeredSlides: true,
     loop: true,
-    //   loopFillGroupWithBlank: true,
-    // autoplay: {
-    //   delay: 2500,
-    //   disableOnInteraction: false,
-    // },
-    pagination: {
-      el: '.swiper-pagination',
-      clickable: true,
-      
-    },
-    scrollbar: {
+    
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+        
+      },
+      scrollbar: {
         el: '.swiper-scrollbar',
         hide: false,
       },
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    },
-  });
-  
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+    });
+    

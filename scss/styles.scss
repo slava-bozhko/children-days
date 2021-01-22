@@ -49,7 +49,6 @@ h3{
     font-size: 4rem;
     margin: 0 0 50px 0;
     text-transform: uppercase;
-    // max-width: 900px;
 }
 h4{
     font-size: 3rem;
@@ -65,14 +64,17 @@ h4{
     left: 50%;
     width: 100vw;
     height: 100vh;
-    transform: translate(-2500%, 0%);
+    transform: translate(-250%, 0%);
     z-index: 10;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     font-size: 5rem;
-    transition: all .3s ease-in-out;
+    transition: all .5s ease-in-out;
+    @include media(990px) {
+        font-size: 3rem;
+    }
     &__items{
         padding: 30px;
         list-style: none;
@@ -132,6 +134,11 @@ h4{
     list-style: none;
     padding: 0;
     margin: 0;
+    @include media(576px) {
+        margin: 10px;
+
+    }
+    
 }
 .social{
     display: inline-block;
@@ -226,6 +233,9 @@ h4{
     @include media(990px) {
         font-size: 5rem;
     }
+    @include media(576px) {
+        font-size: 4rem;
+    }
     &__about{
         font-family: $text-ff;
         font-size: 2.4rem;
@@ -250,7 +260,9 @@ h4{
     &--star{
         color: $dark-gray;
         margin: 80px auto 100px;
-
+        @include media(576px) {
+            margin: 50px auto;
+        }
     }
 
     
@@ -267,7 +279,8 @@ h4{
             max-width: 60vw;
         }
         @include media(760px) {
-            max-width: 100%;
+            max-width: 90vw;
+            
         }   
     }
     &__item{
@@ -286,12 +299,42 @@ h4{
     &--center{
         justify-content: center;
         align-items: center;
-        margin: 20px 0 100px;
+        margin: 20px 0 50px;
         // height: 35vh;
         // max-width: 35vw;        
 
     }
 }
+.blockquote{
+    position: relative;
+    padding: 10px 20px;
+    margin: 10px 40px;    
+    text-align: left;
+}
+.blockquote:before,
+.blockquote:after {
+    position: absolute;
+    color: $secondary-color;
+    font-size: 10rem;
+    font-family: $text-ff;    
+}
+.blockquote:before {
+    content: '“';
+    left: -30px;
+    top: -5px;
+}
+.blockquote:after {
+    content: '”';
+    right: -10px;
+    bottom: -1px;
+}
+.blockquote cite {
+    color: $secondary-color;
+    font-size: 1.6rem;
+    padding-top: 10px;
+    display: block;
+}
+
 .adr{
     
     position: relative;
@@ -337,6 +380,9 @@ h4{
 .swiper-container {
     width: 60vw;
     height: 85vh;
+    @include media(768px) {
+        width: 100%;
+    }
 }
 :root{
     --swiper-theme-color: #ffd966;
@@ -350,7 +396,10 @@ h4{
     font-size: 2.4rem;
     background: transparent;
     padding: 0 100px;
-
+    @include media(576px) {
+        padding: 0;
+        margin: 0;
+    }
 
     /* Center slide text vertically */
     display: -webkit-box;
@@ -369,11 +418,15 @@ h4{
   }
   .swiper-button-next{
     transition: all .2s ease-in-out;
-
+    @include media(576px) {
+        display: none;        
+    }
 }
 .swiper-button-prev{
     transition: all .2s ease-in-out;
-
+    @include media(576px) {
+        display: none;        
+    }
 }
 .swiper-button-next:hover{
       transform:scale(1.2);
@@ -393,10 +446,11 @@ h4{
 .people{
     list-style: none;
     padding: 0;
-    margin: 0;
+    margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
+    
 }
 
 
@@ -461,47 +515,73 @@ h4{
 .spheres{
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-evenly;
+    // display: grid;
+    // margin: 0 auto;
+    // grid-template-columns: repeat(3, 1fr);
+    // @include media(992px) {
+    //     grid-template-columns: repeat(2, 1fr);
+        
+    // }
+    // @include media(576px) {
+    //     grid-template-columns: 1fr;
+        
+    // }
 }
 
 .sphere{
-    margin: 50px 10px;
+    margin: 5px 10px;
     padding: 5px;
     transition: all .3s ease-in-out;
-
+    height: 220px;
+    width: 300px;
+    position: relative; //Для svg
+    @include media(576px) {
+        margin: 10px;        
+    }
     &__ico{
-        position: relative;
+    position: relative; //Для звезд
+
     }
     &__img{
         position: absolute;
         left: 50%;
-        top: -220%;
+        top: 50%;
         transform: translate(-50%,-50%);
         }
     &__svg{
         position: absolute;
         left: 50%;
-        top: -220%;
+        top: 50%;
         transform: translate(-50%,-50%);
         fill: $dark-gray;
         stroke: $dark-gray;
     }
     &__cap{
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,0%);
+
         font-size: 2.3rem;
         width: 300px;
         text-align: center;
+        @include media(992px) {
+            font-size: 2rem;
+            
+        }
     }
     &__star{
         font-size: 3.2rem;
         position: absolute;
         left: 50%;
         top: 50%;
-        transform: translate(-50%,-100%);
+        transform: translate(-50%,-80%);
         color: $secondary-color;
         
     }
     @include hover{
-        transform: scale(1.3);
+        transform: scale(1.2);
         cursor: pointer;
         transition: all .3s ease-in-out;
 
@@ -557,6 +637,7 @@ h4{
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    color: $secondary-color;
     @include media(768px) {
         flex-direction: column;
     }
@@ -579,9 +660,19 @@ h4{
     @include media(768px) {
     width: 70%;
     }
+    @include media(600px) {
+        background-image: none;
+        width: 100%;
+        height: 100%;
+        padding-left: 0;
+    }
+        
     &--cat{
         background-image: url('../img/cat.png');
         padding-left: 0;
+        @include media(600px) {
+            background-image: none;
+        }
     }
     &__text{
             font-size: 1.8rem;
@@ -591,6 +682,10 @@ h4{
             max-width: 280px;
             margin: 10px auto;
             text-align: left;
+            @include media(600px) {
+                max-width: 90%;                
+        
+            }
             }
 }
 
