@@ -51,7 +51,7 @@ function initMap() {
   const infowindow = new google.maps.InfoWindow({
     content: contentString,
   });
-const image = '../img/karm.jpg'
+const image = 'https://slava-bozhko.github.io/children-days/img/karm.jpg'
 const marker = new google.maps.Marker({
     position: center,
     title: 'проспект Нахимова, 178 Мариуполь, Донецкая область, Украина 87500 тел. +38(097)779-50-34, +38(095)662-64-44',

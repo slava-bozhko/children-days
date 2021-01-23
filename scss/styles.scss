@@ -23,10 +23,6 @@ body{
 }
 footer{
     background-color: $secondary-color;
-    // background-image: url('../img/adress.png');
-    // background-position: left;
-    // background-repeat: no-repeat;
-    // background-size: contain;
     
 }
 
@@ -202,11 +198,13 @@ h4{
     }
     &--white{
         background-color: $secondary-color;
+        background-image: url('../img/back024.jpg');
         
     }
     &--yellow{
         background-color: $primery-color;
-        
+        color: $secondary-color;   
+
     }
 }
 .tittle{
@@ -672,7 +670,7 @@ h4{
     }
     &--mouse{
         background-image: url('../img/mouse.png');
-        padding-left: 0;
+        padding-left: 10px;
         width: 30%;
         color: $dark-gray;
         @include media(600px) {
@@ -683,7 +681,7 @@ h4{
     }
     &--rabbit{
         background-image: url('../img/rabbit.png');
-        padding-left: 0;
+        padding-left: 10px;
         width: 30%;
         color: $dark-gray;
         @include media(600px) {
@@ -708,7 +706,7 @@ h4{
             font-family: $text-ff;
             display: block;
             max-width: 280px;
-            margin: 10px auto;
+            margin: 18px auto;
             text-align: left;
             @include media(600px) {
                 max-width: 90%;                
