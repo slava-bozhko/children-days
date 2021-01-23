@@ -199,6 +199,8 @@ h4{
     }
     &--star{
         background-color: $text-color;
+        background-image: url('../img/back025.jpg');
+
     }
     &--white{
         background-color: $secondary-color;
@@ -577,7 +579,7 @@ h4{
         }
     }
     &__star{
-        font-size: 3.2rem;
+        font-size: 2.8rem;
         position: absolute;
         left: 50%;
         top: 50%;
@@ -611,7 +613,7 @@ h4{
 
 .star{
     text-align: center;
-    margin: 20px 0;
+    margin: 10px 0;
 
     &__ico{
         position: relative;
