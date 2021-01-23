@@ -40,7 +40,7 @@ window.addEventListener('scroll', function(e){
     })
 
 let map, infoWindow;
-let centerMap = {lat: 47.092998, lng: 37.530807};
+let centerMap = {lat: 47.092098, lng: 37.530807};
 let center = {lat: 47.091558, lng: 37.530807};
 function initMap() {
     map = new google.maps.Map(document.getElementById("map"), {
