@@ -35,7 +35,10 @@ h1{
     }
     @include media(760px) {
         font-size: 5rem;
-    }   
+    }
+    @include media(325px) {
+        font-size: 4rem;
+    }
 }
 
 h2{
@@ -184,8 +187,9 @@ h4{
             min-height: 150vh;            
         }
         @include media(760px) {
-            min-height: 200vh;            
+            min-height: 230vh;            
         }
+    
     }
     &--info{
         background-image: url('../img/back3.jpg');
@@ -233,6 +237,9 @@ h4{
     }
     @include media(576px) {
         font-size: 4rem;
+    }
+    @include media(325px) {
+        font-size: 3rem;
     }
     &__about{
         font-family: $text-ff;
