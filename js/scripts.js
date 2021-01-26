@@ -13,7 +13,7 @@ var isInViewport = function (elem) {
     return (
         bounding.top >= 0 &&
         bounding.left >= 0 &&
-        bounding.top <= (window.innerHeight || document.documentElement.clientHeight) &&
+        bounding.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
         bounding.right <= (window.innerWidth || document.documentElement.clientWidth)
     );
 };
@@ -41,7 +41,7 @@ window.addEventListener('scroll', function(e){
 
 let map, infoWindow;
 let centerMap = {lat: 47.092298, lng: 37.530807};
-let center = {lat: 47.091558, lng: 37.530807};
+let center = {lat: 47.09153, lng: 37.531007};
 function initMap() {
     map = new google.maps.Map(document.getElementById("map"), {
       center: centerMap,
@@ -52,7 +52,7 @@ function initMap() {
   const infowindow = new google.maps.InfoWindow({
     content: contentString,
   });
-const image = 'https://slava-bozhko.github.io/children-days/img/karm.jpg'
+const image = '../favicon.png'
 const marker = new google.maps.Marker({
     position: center,
     title: 'проспект Нахимова, 178 Мариуполь, Донецкая область, Украина 87500 тел. +38(097)779-50-34, +38(095)662-64-44',
