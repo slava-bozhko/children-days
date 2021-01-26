@@ -1,11 +1,26 @@
 'use strict'
 
+let toggler = document.getElementById('toggler-input');
+toggler.addEventListener('click', hideBody);
 
 function closeMenu(){
-    document.querySelector('#toggler').click();
+    document.querySelector('#toggler').click();   
 }
 
 
+function hideBody(){
+
+  let body = document.querySelector('body').style;
+    
+    if (toggler.checked) {
+      
+      body.overflow = 'hidden';
+    }
+    
+    else{
+      body.overflow = 'visible';
+    }
+}
 
 
 let isInViewport = function (elem) {

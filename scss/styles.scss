@@ -12,11 +12,13 @@ a, button{
 html{
     scroll-behavior: smooth;
     font-size: 10px;
+    // overflow: visible;
 }
 body{
     font-family: $ff;
     color: $dark-gray;
     background-color: $secondary-color;
+    transition: all .3s ease-in-out;
 
 }
 .container{
@@ -380,7 +382,6 @@ h4{
     @include media(576px) {
         width: 90%;
         line-height: 1.4;
-
     }
     a{
         font-weight: 700;
