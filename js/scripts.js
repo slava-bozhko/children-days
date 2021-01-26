@@ -1,7 +1,6 @@
 'use strict'
 
 let toggler = document.getElementById('toggler-input');
-toggler.addEventListener('click', hideBody);
 
 function closeMenu(){
     document.querySelector('#toggler').click();   
@@ -46,7 +45,7 @@ const rect = elem.getBoundingClientRect();
 function checkItems(){
     
     let items = document.querySelectorAll('.animate');
-
+    console.log('123')
     items.forEach(item=>{
       
         if (isInViewport(item)){
@@ -110,3 +109,4 @@ marker.addListener("click", () => {
       },
     });
     
+// toggler.addEventListener('click', hideBody);
