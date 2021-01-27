@@ -45,7 +45,6 @@ const rect = elem.getBoundingClientRect();
 function checkItems(){
     
     let items = document.querySelectorAll('.animate');
-    console.log('123')
     items.forEach(item=>{
       
         if (isInViewport(item)){
@@ -93,20 +92,20 @@ marker.addListener("click", () => {
     spaceBetween: 30,
     centeredSlides: true,
     loop: true,
-    
+    lazy: true,
+    autoplay: {
+      delay: 4500,
+      disableOnInteraction: true,
+    },
       pagination: {
         el: '.swiper-pagination',
-        clickable: true,
-        
+        clickable: true,        
       },
-      scrollbar: {
-        el: '.swiper-scrollbar',
-        hide: false,
-      },
+      
       navigation: {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
-      },
+      },      
     });
     
 // toggler.addEventListener('click', hideBody);
