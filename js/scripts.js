@@ -12,8 +12,7 @@ function hideBody(){
   let body = document.querySelector('body').style;
     
     if (toggler.checked) {
-      
-      body.overflow = 'hidden';
+      setTimeout(() =>{body.overflow = 'hidden'}, 500)
     }
     
     else{
@@ -108,4 +107,4 @@ marker.addListener("click", () => {
       },      
     });
     
-// toggler.addEventListener('click', hideBody);
+// toggler.addEventListener('click', () =>{setTimeout(hideBody, 500)});

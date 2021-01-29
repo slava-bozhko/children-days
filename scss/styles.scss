@@ -11,9 +11,7 @@ a, button{
 }
 html{
     scroll-behavior: smooth;
-    font-size: 10px;
-    // overflow: visible;
-    
+    font-size: 10px;   
 }
 body{
     font-family: $ff;
@@ -112,29 +110,26 @@ h4{
     opacity: 1;
     
 }
-// #toggler-input:checked body{
-//     display: none;
-//     overflow: hidden;
-// }
-
 
 #toggler-input:checked ~ #toggler{
     position: fixed;
 }
 #toggler img{
-    position: absolute;
+    // position: absolute;
     cursor: pointer;
-    left: 0;
-    top: 0;
-    transform: translate(30%, 30%);
+    // left: 0;
+    // top: 0;
+    // transform: translate(30%, 30%);
     transition: all .3s ease-in-out;
     padding: 10px;
-    @include hover{    
-         transform: translate( 40%, 40%);
+    margin: 20px;
+    @include hover{
+
+         transform: scale(1.2);
     }
-    @include media(576px) {
-        transform: translate(10%, 10%);
-    }
+    // @include media(576px) {
+    //     transform: translate(10%, 10%);
+    // }
 }
 
 .socials{
