@@ -75,7 +75,7 @@ function initMap() {
   const infowindow = new google.maps.InfoWindow({
     content: contentString,
   });
-const image = 'https://github.com/slava-bozhko/children-days/blob/main/favicon.png'
+const image = '../favicon.png'
 const marker = new google.maps.Marker({
     position: center,
     title: 'проспект Нахимова, 178 Мариуполь, Донецкая область, Украина 87500 тел. +38(097)779-50-34, +38(095)662-64-44',
@@ -106,5 +106,69 @@ marker.addListener("click", () => {
         prevEl: '.swiper-button-prev',
       },      
     });
-    
+    function sentInTelegram(){
+      let chatid = "392696305";
+      let token = "1614825886:AAHvfum_ggiGMWOq7p7LHXUAwAgSH1YpwOg",
+          messName = document.getElementById("recipientName").value,
+          messPhone = document.getElementById("recipientPhone").value,
+          messMore = document.getElementById("messageText").value;
+                                         
+          if (messPhone !== null){
+              if (isNaN(messPhone)) {
+              alert("Введите занчение телефон !!!");
+              return;
+              }
+               else if (messPhone < 0){
+                  alert("Введите телефон в правильном формате с плюсом");
+                  return;
+
+              }
+              else if (messPhone == 0){
+                  alert("Введите телефон не 0");
+                  return;
+              }
+          }
+          if (messName !== null){
+              if (messName.length < 1){
+                  alert("Введите ваше имя");
+
+                  return;
+              }
+          }
+          console.log(messName, messPhone, messMore);            
+          let text = `Имя: <b>${messName}</b>\nТелефон: <a><b>${messPhone}</b></a>`;
+          if (messMore.length >= 1){
+              text = `Имя: <b>${messName}</b>\nТелефон: <a><b>${messPhone}</b></a>\n${messMore}`;
+          }
+              text = encodeURIComponent(text);
+              console.log(text);         
+
+          let url = `https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatid}&parse_mode=HTML&text=${text}`;
+          
+  fetch(url);
+          
+  let btnSended = document.getElementById('btnsend');
+  btnSended.innerHTML = 'Ваш запрос отравлен';
+  btnSended.setAttribute("disabled", "disabled");
+  document.getElementById("recipientName").value = '';
+  document.getElementById("recipientPhone").value = '';
+  document.getElementById("messageText").value = '';
+};
+
+
+const myModal = new HystModal({
+  linkAttributeName: 'data-hystmodal',
+  catchFocus: true,
+  // waitTransitions: true,
+  closeOnEsc: true,
+  // fixedSelectors: ".my-fixed-elems",
+  beforeOpen: function(modal){
+    console.log('Message before opening the modal');
+    console.log(modal); //modal window object
+  },
+  afterClose: function(modal){
+    console.log('Message after modal has closed');
+    console.log(modal); //modal window object
+  },
+});
 // toggler.addEventListener('click', () =>{setTimeout(hideBody, 500)});
