@@ -106,16 +106,21 @@ marker.addListener("click", () => {
         prevEl: '.swiper-button-prev',
       },      
     });
+
+
+
+    
+    
     function sentInTelegram(){
+  
       let chatid = "392696305";
       let token = "1614825886:AAHvfum_ggiGMWOq7p7LHXUAwAgSH1YpwOg",
           messName = document.getElementById("recipientName").value,
           messPhone = document.getElementById("recipientPhone").value,
           messMore = document.getElementById("messageText").value;
-                                         
           if (messPhone !== null){
               if (isNaN(messPhone)) {
-              alert("Введите занчение телефон !!!");
+              alert("Введите телефон цифрами");
               return;
               }
                else if (messPhone < 0){
@@ -124,21 +129,35 @@ marker.addListener("click", () => {
 
               }
               else if (messPhone == 0){
-                  alert("Введите телефон не 0");
+                  alert("Введите телефон");
                   return;
               }
           }
+          let a = messPhone.charAt(0),
+              b = messPhone.charAt(1);
+              a = a+b;
+          if (a !== '38'){
+            alert("Телефон должен начинаться с 38");
+            return;
+          }
+
+          console.log(messPhone.length);
+          if (messPhone.length !== 12){
+            alert("Телефон должен состоять из 12 знаков");
+            return;
+          }
+          
           if (messName !== null){
               if (messName.length < 1){
                   alert("Введите ваше имя");
-
                   return;
               }
           }
-          console.log(messName, messPhone, messMore);            
-          let text = `Имя: <b>${messName}</b>\nТелефон: <a><b>${messPhone}</b></a>`;
+          messPhone = messPhone.slice(2);          
+          console.log(messName, messPhone, messMore); 
+          let text = `Имя: <b>${messName}</b>\nТелефон: <a>${messPhone}</a>`;
           if (messMore.length >= 1){
-              text = `Имя: <b>${messName}</b>\nТелефон: <a><b>${messPhone}</b></a>\n${messMore}`;
+              text = `Имя: <b>${messName}</b>\nТелефон: <a>${messPhone}</a>\n${messMore}`;
           }
               text = encodeURIComponent(text);
               console.log(text);         
@@ -159,12 +178,19 @@ marker.addListener("click", () => {
 const myModal = new HystModal({
   linkAttributeName: 'data-hystmodal',
   catchFocus: true,
-  // waitTransitions: true,
+  waitTransitions: true,
   closeOnEsc: true,
-  // fixedSelectors: ".my-fixed-elems",
   beforeOpen: function(modal){
     console.log('Message before opening the modal');
     console.log(modal); //modal window object
+    // Отменяем ввод не цифр
+    let inp = document.getElementById("recipientPhone");
+  
+    inp.addEventListener('keypress', e => {
+        if(!/\d/.test(e.key))
+          e.preventDefault();
+      });
+    // Отменяем ввод не цифр end
   },
   afterClose: function(modal){
     console.log('Message after modal has closed');
