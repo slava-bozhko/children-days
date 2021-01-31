@@ -75,7 +75,7 @@ function initMap() {
   const infowindow = new google.maps.InfoWindow({
     content: contentString,
   });
-const image = '../favicon.png'
+const image = 'favicon.png'
 const marker = new google.maps.Marker({
     position: center,
     title: 'проспект Нахимова, 178 Мариуполь, Донецкая область, Украина 87500 тел. +38(097)779-50-34, +38(095)662-64-44',
@@ -105,13 +105,8 @@ marker.addListener("click", () => {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
       },      
-    });
-
-
-
-    
-    
-    function sentInTelegram(){
+    });    
+function sentInTelegram(){
   
       let chatid = "392696305";
       let token = "1614825886:AAHvfum_ggiGMWOq7p7LHXUAwAgSH1YpwOg",
