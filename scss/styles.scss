@@ -704,13 +704,18 @@ h4{
 
 }
 .modal-open{
+    position: fixed;
     font-size: 2rem;
     text-decoration: none;
     color: $dark-gray;
-    position: fixed;
     right: 0;
     bottom: 0;
     padding: 20px;
+    background-image: url('../img/section.png');
+    // z-index: 20;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
 }
 h5{
     margin: 20px 0;
@@ -767,6 +772,10 @@ h5{
         }
     }
 
+}
+#callback{
+    fill: $dark-gray;
+    margin: 30px;
 }
 // .bgs{
 //     background-color: $secondary-color;
