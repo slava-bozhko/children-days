@@ -85,7 +85,7 @@ h4{
     }
     &__item{
         text-align: center;
-        
+        margin: 10px;
     }
     &__item a{
         color: $dark-gray;
@@ -127,9 +127,13 @@ h4{
 
          transform: scale(1.2);
     }
-    // @include media(576px) {
-    //     transform: translate(10%, 10%);
-    // }
+    @include media(576px) {
+        position: fixed;
+        // left: 0;
+        // top: 0;
+        width: 70px;
+    
+    }
 }
 
 .socials{
@@ -330,11 +334,15 @@ h4{
 }
 .blockquote:before {
     content: '“';
+    font-family: $ff;
+    color: $primery-color;
     left: -30px;
     top: -5px;
 }
 .blockquote:after {
     content: '”';
+    font-family: $ff;
+    color: $primery-color;
     right: -10px;
     bottom: -1px;
 }
@@ -392,7 +400,7 @@ h4{
     
 }
 .swiper-container {
-    
+    margin-bottom: 40px;
     width: 70%;
     &--img{
         height: 100vh;
@@ -404,7 +412,7 @@ h4{
 }
 :root{
     --swiper-theme-color: #ffd966;
-    --swiper-navigation-size: 85px;
+    --swiper-navigation-size: 1px;
 
 }
 
@@ -449,14 +457,16 @@ h4{
   }
   .swiper-button-next{
     transition: all .2s ease-in-out;
+    padding: 0 30px; 
     @include media(576px) {
         display: none;        
     }
 }
 .swiper-button-prev{
     transition: all .2s ease-in-out;
+    padding: 0 30px; 
     @include media(576px) {
-        display: none;        
+        display: none;    
     }
 }
 .swiper-button-next:hover{
@@ -494,7 +504,7 @@ h4{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    
+    margin-bottom: 40px;
 }
 
 .sphere{
@@ -532,6 +542,7 @@ h4{
     margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    margin-bottom: 40px;
     @include media(576px) {
         grid-template-columns: 1fr;
         
@@ -625,7 +636,7 @@ h4{
     &__text{
         font-size: 2rem;
         font-family: $text-ff;
-        padding: 15px;
+        padding: 5px 25px 30px;
     }
     &__img{
         
@@ -678,7 +689,7 @@ h4{
         color: $text-color;
     }
     &__text{
-        margin: 20px;
+        margin: 20px 35px;
         padding: 15px;
         font-size: 2rem;
         font-family: $text-ff;
@@ -715,6 +726,10 @@ h4{
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
+    z-index: 2;
+    @include media(576px){
+            padding: 0;
+    }
 }
 h5{
     margin: 20px 0;
@@ -775,6 +790,11 @@ h5{
 #callback{
     fill: $dark-gray;
     margin: 30px;
+    @include media(576px){
+        // margin: 10px;
+        width: 42px;
+        height: 42px;
+}
 }
 // .bgs{
 //     background-color: $secondary-color;
@@ -782,10 +802,4 @@ h5{
 .hystmodal__window{
     border-radius: 5px;
     padding: 30px 30px;
-}
-#recipientPhone::before{
-    content: '+38';
-    display: block;
-    position: absolute;
-    left: -25px;
 }

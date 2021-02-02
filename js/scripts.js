@@ -1,6 +1,7 @@
 'use strict'
 
 let toggler = document.getElementById('toggler-input');
+toggler.addEventListener('onclick', hideBody());
 
 function closeMenu(){
     document.querySelector('#toggler').click();   
@@ -10,7 +11,7 @@ function closeMenu(){
 function hideBody(){
 
   let body = document.querySelector('body').style;
-    
+    console.log('123')
     if (toggler.checked) {
       setTimeout(() =>{body.overflow = 'hidden'}, 500)
     }
@@ -22,16 +23,8 @@ function hideBody(){
 
 
 let isInViewport = function (elem) {
-// let bounding = elem.getBoundingClientRect();
-//     return (
-//         bounding.top >= 0 &&
-//         bounding.left >= 0 &&
-//         bounding.top + bounding.height / 2 <= (window.innerHeight || document.documentElement.clientHeight)
-//          &&
-//         bounding.right <= (window.innerWidth || document.documentElement.clientWidth)
-//     );
+
 const rect = elem.getBoundingClientRect();
-    // DOMRect { x: 8, y: 8, width: 100, height: 100, top: 8, right: 108, bottom: 108, left: 8 }
     const windowHeight = (window.innerHeight || document.documentElement.clientHeight);
     const windowWidth = (window.innerWidth || document.documentElement.clientWidth);
 
@@ -87,7 +80,9 @@ marker.addListener("click", () => {
       infowindow.open(map, marker);
       });
   }
-  var swiper = new Swiper('.swiper-container', {
+
+
+let swiper = new Swiper('.swiper-container', {
     spaceBetween: 30,
     centeredSlides: true,
     loop: true,
@@ -104,8 +99,11 @@ marker.addListener("click", () => {
       navigation: {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
+        
       },      
     });    
+
+
 function sentInTelegram(){
   
       let chatid = "392696305";
@@ -161,7 +159,7 @@ function sentInTelegram(){
           
   fetch(url);
           
-  let btnSended = document.getElementById('btnsend');
+let btnSended = document.getElementById('btnsend');
   btnSended.innerHTML = 'Ваш запрос отравлен';
   btnSended.setAttribute("disabled", "disabled");
   document.getElementById("recipientName").value = '';
@@ -192,4 +190,3 @@ const myModal = new HystModal({
     console.log(modal); //modal window object
   },
 });
-// toggler.addEventListener('click', () =>{setTimeout(hideBody, 500)});
