@@ -11,7 +11,10 @@
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/hystmodal.min.css">
     <script src="https://kit.fontawesome.com/25fc6d5683.js" crossorigin="anonymous"></script>
-
+    <script
+    src="https://code.jquery.com/jquery-3.5.1.js"
+    integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+    crossorigin="anonymous"></script>
     
     <meta name="theme-color" content="#434343">
     <meta property="og:url"                content="https://slava-bozhko.github.io/children-days/" />
@@ -32,9 +35,14 @@
 <body>
 
     <header class="bg bg--header">
-        <input type="checkbox" name="toggler-input" id="toggler-input" onclick="hideBody()">
+        <input type="checkbox" name="toggler-input" id="toggler-input">
         <label id="toggler" for="toggler-input">
-           <img class="menu" src="img/head2.png" alt="Menu">
+           <!-- <img class="menu" src="img/head2.png" alt="Menu"> -->
+           <div  class="pin">
+               
+               <img src="img/head2.png" alt="Menu">
+
+           </div>    
         </label>
         <nav class="navi">
             <ul class="navi__items">
