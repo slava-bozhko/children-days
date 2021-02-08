@@ -1,7 +1,8 @@
 'use strict'
 
-let toggler = document.getElementById('toggler-input');
-toggler.addEventListener('onclick', hideBody());
+// let toggler = document.getElementById('toggler-input');
+// toggler.addEventListener('onclick', hideBody());
+
 
 function closeMenu(){
     document.querySelector('#toggler').click();   
@@ -111,34 +112,34 @@ function sentInTelegram(){
           messName = document.getElementById("recipientName").value,
           messPhone = document.getElementById("recipientPhone").value,
           messMore = document.getElementById("messageText").value;
-          if (messPhone !== null){
-              if (isNaN(messPhone)) {
-              alert("Введите телефон цифрами");
-              return;
-              }
-               else if (messPhone < 0){
-                  alert("Введите телефон в правильном формате с плюсом");
-                  return;
+          // if (messPhone !== null){
+          //     if (isNaN(messPhone)) {
+          //     alert("Введите телефон цифрами");
+          //     return;
+          //     }
+          //      else if (messPhone < 0){
+          //         alert("Введите телефон в правильном формате с плюсом");
+          //         return;
 
-              }
-              else if (messPhone == 0){
-                  alert("Введите телефон");
-                  return;
-              }
-          }
-          let a = messPhone.charAt(0),
-              b = messPhone.charAt(1);
-              a = a+b;
-          if (a !== '38'){
-            alert("Телефон должен начинаться с 38");
-            return;
-          }
+          //     }
+          //     else if (messPhone == 0){
+          //         alert("Введите телефон");
+          //         return;
+          //     }
+          // }
+          // let a = messPhone.charAt(0),
+          //     b = messPhone.charAt(1);
+          //     a = a+b;
+          // if (a !== '38'){
+          //   alert("Телефон должен начинаться с 38");
+          //   return;
+          // }
 
-          console.log(messPhone.length);
-          if (messPhone.length !== 12){
-            alert("Телефон должен состоять из 12 знаков");
-            return;
-          }
+          // console.log(messPhone.length);
+          // if (messPhone.length !== 12){
+          //   alert("Телефон должен состоять из 12 знаков");
+          //   return;
+          // }
           
           if (messName !== null){
               if (messName.length < 1){
@@ -146,8 +147,8 @@ function sentInTelegram(){
                   return;
               }
           }
-          messPhone = messPhone.slice(2);          
-          console.log(messName, messPhone, messMore); 
+          // messPhone = messPhone.slice(2);          
+          // console.log(messName, messPhone, messMore); 
           let text = `Имя: <b>${messName}</b>\nТелефон: <a>${messPhone}</a>`;
           if (messMore.length >= 1){
               text = `Имя: <b>${messName}</b>\nТелефон: <a>${messPhone}</a>\n${messMore}`;
@@ -190,30 +191,7 @@ const myModal = new HystModal({
     console.log(modal); //modal window object
   },
 });
-
-
-
-//config vars
-const lagAmount = 50;
-const maxSpeed = 100;
-const frameRate = 20;
-const selector = '.pin';
-//code
-let scrollTop = 0;
-let pinTop = 0;
-let lastTime;
-const updatePinPosition = (time) => {
-	if (!lastTime)
-		lastTime = time;
-	let delta = time - lastTime;
-	if (delta >= frameRate){
-		scrollTop = $(window).scrollTop();
-		var move = (scrollTop - pinTop) * delta / (lagAmount + delta);
-		var direction = move === 0 ? 0 : move / Math.abs(move);
-		pinTop = pinTop + Math.min( Math.abs(move), maxSpeed ) * direction;
-		$(selector).css('transform', `translateY(${-move}px`)
-		lastTime = time;
-	}
-	requestAnimationFrame(updatePinPosition);
-}
-requestAnimationFrame(updatePinPosition);
+let phoneMask = IMask(
+  document.getElementById('recipientPhone'), {
+    mask: '+{38}(000)000-00-00'
+  });

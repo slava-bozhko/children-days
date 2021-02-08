@@ -401,7 +401,7 @@ h4{
 }
 .swiper-container {
     margin-bottom: 40px;
-    width: 70%;
+    width: 80%;
     &--img{
         height: 100vh;
     }
@@ -445,7 +445,7 @@ h4{
   .swiper-slide img {
     width: auto;
     height: auto;
-    max-width: 100%;
+    max-width: 70%;
     max-height: 100%;
     -ms-transform: translate(-50%, -50%);
     -webkit-transform: translate(-50%, -50%);
@@ -796,24 +796,9 @@ h5{
         height: 42px;
 }
 }
-// .bgs{
-//     background-color: $secondary-color;
-// }
+
 .hystmodal__window{
     border-radius: 5px;
     padding: 30px 30px;
 }
-// .pin{
-// 	position: fixed;
-// 	top: 30%;
-// 	left: 30%;
-// 	width: 40%;
-// 	height: 40vh;
-// 	box-sizing: border-box;
-// 	padding: 2rem;
-// 	background: transparent;
-// 	// box-shadow: 0 1rem 5rem -2rem rgba(black,0.5);
-// 	transition: transform 100ms linear;
-	
-// }
-// *{ backface-visibility: hidden;}
+

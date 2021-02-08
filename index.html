@@ -11,10 +11,6 @@
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/hystmodal.min.css">
     <script src="https://kit.fontawesome.com/25fc6d5683.js" crossorigin="anonymous"></script>
-    <script
-    src="https://code.jquery.com/jquery-3.5.1.js"
-    integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
-    crossorigin="anonymous"></script>
     
     <meta name="theme-color" content="#434343">
     <meta property="og:url"                content="https://slava-bozhko.github.io/children-days/" />
@@ -35,14 +31,9 @@
 <body>
 
     <header class="bg bg--header">
-        <input type="checkbox" name="toggler-input" id="toggler-input">
+        <input type="checkbox" name="toggler-input" id="toggler-input" onclick="hideBody()">
         <label id="toggler" for="toggler-input">
            <img class="menu" src="img/head2.png" alt="Menu">
-           <!-- <div  class="pin">
-               
-               <img src="img/head2.png" alt="Menu">
-
-           </div>     -->
         </label>
         <nav class="navi">
             <ul class="navi__items">
@@ -429,13 +420,13 @@
                 </div>
             </div>
         </div>
-            
+        
     </footer>
-
+    
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="js/hystmodal.min.js"></script>
+    <script src="https://unpkg.com/imask"></script>  
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA1MzMB-H5QJ5RybWLK0uoJ3BmcwmJd3uk&region=JP&language=uk&callback=initMap" defer></script>
-    <script src="js/scripts.js"></script>
     
 	<a href="#" data-hystmodal="#myModal" class="modal-open">
         
@@ -470,7 +461,7 @@
                                   <label for="recipientName" class="form__label">Ваше имя:</label>
                                   <input type="text" class="form__control" required placeholder="Введите Ваше имя" id="recipientName">
                                   <label for="recipientPhone" class="form__label">Ваш телефон:</label>
-                                  <input  name="recipientPhone" type="tel" class="form__control" placeholder="38" maxlength="12" id="recipientPhone">
+                                  <input  name="recipientPhone" type="tel" class="form__control" required placeholder="Введите Ваш телефон" id="recipientPhone">
                                   <label for="messageText" class="form__label">Дополнительная информация:</label>
                                   <textarea class="form__control" id="messageText"></textarea>
                                 
@@ -481,6 +472,9 @@
               </div>
         </div> 
     </div>
+
+    <script src="js/scripts.js"></script>
+
 </body>
 
 </html>
