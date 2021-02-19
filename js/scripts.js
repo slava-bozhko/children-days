@@ -1,6 +1,6 @@
 'use strict'
 
-// let toggler = document.getElementById('toggler-input');
+let toggler = document.getElementById('toggler-input');
 // toggler.addEventListener('onclick', hideBody());
 
 
@@ -12,9 +12,10 @@ function closeMenu(){
 function hideBody(){
 
   let body = document.querySelector('body').style;
-    console.log('123')
     if (toggler.checked) {
       setTimeout(() =>{body.overflow = 'hidden'}, 500)
+      console.log('123')
+
     }
     
     else{
@@ -107,8 +108,10 @@ let swiper = new Swiper('.swiper-container', {
 
 function sentInTelegram(){
   
-      let chatid = "392696305";
-      let token = "1614825886:AAHvfum_ggiGMWOq7p7LHXUAwAgSH1YpwOg",
+      let chatid = "-1001416729031";
+      // let chatid = "-1001334344421";
+      // let chatid = "392696305";
+      let token = "1614825886:AAHyzg2qZSI3ugGSHJi5NxwB6ZpdK8stovs",
           messName = document.getElementById("recipientName").value,
           messPhone = document.getElementById("recipientPhone").value,
           messMore = document.getElementById("messageText").value;
@@ -156,7 +159,7 @@ function sentInTelegram(){
               text = encodeURIComponent(text);
               console.log(text);         
 
-          let url = `https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatid}&parse_mode=HTML&text=${text}`;
+          let url = `https://api.telegram.org/bot${token}/sendMessage?chat_type=private&chat_id=${chatid}&parse_mode=HTML&text=${text}`;
           
   fetch(url);
           
