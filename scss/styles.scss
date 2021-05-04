@@ -673,10 +673,10 @@ h4{
 }
 .speech{
     background-image: url(../img/adress.png);
-    background-size: contain;
+    background-size: cover;
     background-repeat: no-repeat;
-    min-height: 542px;
-    width: 40%;
+    // min-height: 542px;
+    width: 50%;
     color: $secondary-color;
     @include media(992px) {
         width: 50%;
@@ -695,7 +695,7 @@ h4{
     &__text{
         margin: 20px 35px;
         padding: 15px;
-        font-size: 2rem;
+        font-size: 1.9rem;
         font-family: $text-ff;
         line-height: 1.5;
     }
@@ -730,7 +730,7 @@ h4{
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
-    z-index: 2;
+    z-index: 12;
     @include media(576px){
             padding: 0;
     }
@@ -748,7 +748,9 @@ h5{
         width: 100%;
     }
     &__title{
-        font-size: 3rem;
+        font-size: 4rem;
+        font-family: $ff;
+        color: $primery-color;
     }
     &__label{
         margin: 15px 0;
